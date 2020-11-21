@@ -14,11 +14,6 @@ local init = function (obj)
   Class.self.hour = o.hour  or 0
   Class.self.day = o.day or 0
   Class.self.year = o.year or 0
-  Class.self.century = o.century or 0
-  Class.self.milennia = o.milennia or 0
-  Class.self.thousand_milennia = o.thousand_milennia or 0 
-  Class.self.eons = o.eons or 0
-  Class.self.factor = Class.init_values[2] or o.factor or 1
   return Class.self
 end
 
@@ -53,10 +48,6 @@ Class.public.tick = function ()
   trigger_time('minute', 'hour', 60)
   trigger_time('hour', 'day', 24)
   trigger_time('day', 'year', 365)
-  trigger_time('year', 'century', 100)
-  trigger_time('century', 'milennia', 10)
-  trigger_time('milennia', 'thousand_milennia', 1000)
-  trigger_time('thousand_milennia', 'eons', 100)
 end
 
 Class.public.registertrigger = function(time, trigger)
